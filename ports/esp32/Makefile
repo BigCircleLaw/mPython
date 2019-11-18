@@ -1,5 +1,7 @@
 include ../../py/mkenv.mk
 
+ESPIDF = /mnt/d/Documents/wonderbits-mpython/esp-idf
+
 # qstr definitions (must come before including py.mk)
 QSTR_DEFS = qstrdefsport.h
 
