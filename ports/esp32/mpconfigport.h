@@ -181,6 +181,7 @@ extern const struct _mp_obj_module_t mp_module_onewire;
 extern const struct _mp_obj_module_t mp_music_module;
 extern const struct _mp_obj_module_t mp_module_audio;
 extern const struct _mp_obj_module_t mp_module_radio;
+extern const struct _mp_obj_module_t mp_module_wonderbits;    //这个是我们添加的，需要声明一下应用外部的struct
 
 #define MICROPY_PORT_BUILTIN_MODULES \
     { MP_OBJ_NEW_QSTR(MP_QSTR_esp), (mp_obj_t)&esp_module }, \
@@ -195,6 +196,8 @@ extern const struct _mp_obj_module_t mp_module_radio;
     { MP_OBJ_NEW_QSTR(MP_QSTR_music), (mp_obj_t)&mp_music_module }, \
     { MP_OBJ_NEW_QSTR(MP_QSTR_audio), (mp_obj_t)&mp_module_audio }, \
     { MP_OBJ_NEW_QSTR(MP_QSTR_radio), (mp_obj_t)&mp_module_radio }, \
+    { MP_OBJ_NEW_QSTR(MP_QSTR_wb), (mp_obj_t)&mp_module_wonderbits }, \
+    //这个是我们添加的modtest
 
 #define MICROPY_PORT_BUILTIN_MODULE_WEAK_LINKS \
     { MP_OBJ_NEW_QSTR(MP_QSTR_binascii), (mp_obj_t)&mp_module_ubinascii }, \

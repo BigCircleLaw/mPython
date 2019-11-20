@@ -57,6 +57,9 @@
 #include "modnetwork.h"
 #include "mpthreadport.h"
 
+#include "wb-lib/uart.h"
+#include "wb-lib/led.h"
+
 // MicroPython runs as a task under FreeRTOS
 #define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN + 1)
 #define MP_TASK_STACK_SIZE      (16 * 1024)
@@ -128,6 +131,7 @@ void mp_task(void *pvParameter) {
     // esp_log_level_set("*", ESP_LOG_INFO);
 
     uart_init();
+    wb_uart_init();
 
     #if CONFIG_SPIRAM_SUPPORT
     // Try to use the entire external SPIRAM directly for the heap
